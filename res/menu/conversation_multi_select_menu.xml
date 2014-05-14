@@ -19,8 +19,4 @@
           android:title="@string/delete"
           android:icon="@drawable/ic_menu_trash_holo_dark"
           android:showAsAction="always|withText" />
-    <item android:id="@+id/markAsUnread"
-          android:title="@string/menu_as_unread"
-          android:icon="@drawable/ic_mark_read_holo_dark"
-          android:showAsAction="always|withText" />
 </menu>
