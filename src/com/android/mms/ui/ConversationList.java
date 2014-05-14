@@ -100,12 +100,14 @@ public class ConversationList extends ListActivity implements DraftCache.OnDraft
     public static final int DELETE_CONVERSATION_TOKEN      = 1801;
     public static final int HAVE_LOCKED_MESSAGES_TOKEN     = 1802;
     private static final int DELETE_OBSOLETE_THREADS_TOKEN = 1803;
+    public static final int MARK_CONVERSATION_UNREAD_TOKEN = 1804;
 
     // IDs of the context menu items for the list of conversations.
     public static final int MENU_DELETE               = 0;
     public static final int MENU_VIEW                 = 1;
     public static final int MENU_VIEW_CONTACT         = 2;
     public static final int MENU_ADD_TO_CONTACTS      = 3;
+    public static final int MENU_MARK_UNREAD          = 4;
 
     public static boolean mIsRunning;
 
@@ -703,6 +705,10 @@ public class ConversationList extends ListActivity implements DraftCache.OnDraft
                 startActivity(createAddContactIntent(address));
                 break;
             }
+	    case MENU_MARK_UNREAD: {
+		confirmMarkUnread(threadId, mQueryHandler);
+		break;
+	    }
             default:
                 break;
             }
